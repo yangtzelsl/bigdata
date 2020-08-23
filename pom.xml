@@ -18,6 +18,7 @@
         <module>spark-scala</module>
         <module>kafka</module>
         <module>design-pattern</module>
+        <module>user-behavior-analysis</module>
     </modules>
 
 
