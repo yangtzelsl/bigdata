@@ -1,8 +1,10 @@
 package com.yangtzelsl
 
 import java.sql.Timestamp
+import java.util.Properties
 
 import org.apache.flink.api.common.functions.AggregateFunction
+import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.api.common.state.{ListState, ListStateDescriptor}
 import org.apache.flink.api.java.tuple.{Tuple, Tuple1}
 import org.apache.flink.configuration.Configuration
@@ -12,6 +14,7 @@ import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.scala.function.WindowFunction
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.{TimeWindow, Window}
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.util.Collector
 
 import scala.collection.mutable.ListBuffer
@@ -32,9 +35,20 @@ object HotItemsAnalysis {
     // 设置并发
     env.setParallelism(1)
 
+    // 设置数据源属性
+    val properties = new Properties()
+    properties.setProperty("bootstrap.servers", "localhost:9092")
+    properties.setProperty("group.id", "consumer-group")
+    properties.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
+    properties.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
+    properties.setProperty("auto.offset.reset", "latest")
+
     import org.apache.flink.api.scala._
     val filePath = "E:\\IDEA2018\\study\\user-behavior-analysis\\hot-items-analysis\\src\\main\\resources\\UserBehavior.csv"
-    val stream = env.readTextFile(filePath)
+
+    val stream = env
+      //.readTextFile(filePath)
+      .addSource(new FlinkKafkaConsumer[String]("hotitems", new SimpleStringSchema(), properties))
       .map(line => {
         val lineArray = line.split(",")
 
