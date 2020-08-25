@@ -27,11 +27,11 @@ object LoginFailDetect {
       LoginEvent(1, "192.168.0.1", "fail", 1558430842),
       LoginEvent(1, "192.168.0.2", "fail", 1558430843),
       LoginEvent(1, "192.168.0.3", "fail", 1558430844),
-      //LoginEvent(2, "192.168.0.3", "fail", 1558430845),
+      LoginEvent(2, "192.168.0.3", "fail", 1558430845),
       LoginEvent(2, "192.168.10.10", "success", 1558430845)
     ))
       .assignAscendingTimestamps(_.eventTime * 1000)
-      .filter(_.eventTime == "fail") // 过滤
+      .filter(_.eventType == "fail") // 过滤
       .keyBy(_.userId) // 按userId分流
       // 不需要时间窗口
       .process(new MatchFunction())
