@@ -14,6 +14,7 @@
     <modules>
         <module>hot-items-analysis</module>
         <module>network-traffic-analysis</module>
+        <module>login-fail-detect</module>
     </modules>
 
     <properties>
