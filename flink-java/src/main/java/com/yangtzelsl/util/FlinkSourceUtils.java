@@ -64,11 +64,11 @@ public class FlinkSourceUtils {
 //         return env.addSource(new SocketTextStreamFunction(hostName, port))
 //    }
 
-    public static <T> DataStream<T> createMySQLStream(ParameterTool parameters, Class<? extends DeserializationSchema<T>> clazz) throws Exception{
-
-
-        return env.addSource(new SourceFromMySQL());
-    }
+//    public static <T> DataStream<T> createMySQLStream(ParameterTool parameters, Class<? extends DeserializationSchema<T>> clazz) throws Exception{
+//
+//
+//        return env.addSource(new SourceFromMySQL());
+//    }
 
 
 }
