@@ -10,8 +10,9 @@ import java.net.URL;
 import org.apache.commons.codec.binary.Base64;
 
 /**
- * @Author: shiwf2
+ * @Author: luis.liu
  * @Date: 2019/8/1 14:39
+ * @ref: http://kylin.apache.org/docs/howto/howto_use_restapi.html
  */
 public class KylinHttpBasic {
     private static String encoding;

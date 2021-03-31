@@ -16,4 +16,12 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.facebook.presto</groupId>
+            <artifactId>presto-jdbc</artifactId>
+            <version>0.248</version>
+        </dependency>
+    </dependencies>
+
 </project>
