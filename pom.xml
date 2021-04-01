@@ -23,6 +23,7 @@
         <module>kylin</module>
         <module>presto</module>
         <module>iceberg</module>
+        <module>spark-java</module>
     </modules>
 
 
