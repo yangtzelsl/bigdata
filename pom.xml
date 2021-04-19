@@ -24,6 +24,7 @@
         <module>presto</module>
         <module>iceberg</module>
         <module>spark-java</module>
+        <module>scala-basic-learning</module>
     </modules>
 
 
