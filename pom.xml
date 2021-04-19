@@ -25,6 +25,7 @@
         <module>iceberg</module>
         <module>spark-java</module>
         <module>scala-basic-learning</module>
+        <module>impala</module>
     </modules>
 
 
