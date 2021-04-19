@@ -1,5 +1,9 @@
 package com.yangtzelsl;
 
+import com.yangtzelsl.commons.conf.ConfigurationManagerJava;
+import com.yangtzelsl.commons.constant.ConstantsJava;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
 import java.sql.*;
 
 /**
@@ -15,7 +19,13 @@ public class ImpalaDriverDemo {
     static String USER_NAME = "";
     static String PASS_WORD = "";
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ConfigurationException {
+
+        String driverName = ConfigurationManagerJava.getPropConfig().getString(ConstantsJava.IMPALA_JDBC_DRIVERNAME_JAVA);
+        String jdbcUrl = ConfigurationManagerJava.getPropConfig().getString(ConstantsJava.IMPALA_JDBC_URL_JAVA);
+        String jdbcUser = ConfigurationManagerJava.getPropConfig().getString(ConstantsJava.IMPALA_JDBC_URL_JAVA);
+        String jdbcPassword = ConfigurationManagerJava.getPropConfig().getString(ConstantsJava.IMPALA_JDBC_PASSWORD_JAVA);
+
         Connection con = null;
         ResultSet rs = null;
         PreparedStatement ps = null;

@@ -26,5 +26,6 @@
         <module>spark-java</module>
         <module>scala-basic-learning</module>
         <module>impala</module>
+        <module>commons</module>
     </modules>
 </project>
