@@ -27,5 +27,8 @@
         <module>scala-basic-learning</module>
         <module>impala</module>
         <module>commons</module>
+        <module>hdfs</module>
+        <module>hive</module>
+        <module>hutool</module>
     </modules>
 </project>
