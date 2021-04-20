@@ -13,6 +13,7 @@ import java.sql.*;
  * @Version 1.0
  */
 public class ImpalaDriverDemo {
+    // https://www.cloudera.com/downloads/connectors/impala/jdbc/2-5-5.html
     static String JDBC_DRIVER = "com.cloudera.impala.jdbc41.Driver";
     // ;AuthMech=3;UID=hive;PWD=;UseSasl=0
     static String CONNECTION_URL = "jdbc:impala://x.x.x.x:21050/amber_amp_dwd";
