@@ -30,5 +30,6 @@
         <module>hdfs</module>
         <module>hive</module>
         <module>hutool</module>
+        <module>trino</module>
     </modules>
 </project>
