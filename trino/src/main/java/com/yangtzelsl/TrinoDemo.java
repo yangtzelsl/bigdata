@@ -13,6 +13,7 @@ import java.sql.Statement;
  */
 public class TrinoDemo {
     public static void main(String[] args) throws Exception {
+        // 驱动名要和 facebook 的名称相区分（很重要）
         Class.forName("io.prestosql.jdbc.PrestoDriver");
         Connection connection = DriverManager.getConnection("jdbc:presto://x.x.x.x:8080/hive/default", "root", "");
         Statement stmt = connection.createStatement();
